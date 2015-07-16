@@ -11,7 +11,7 @@ addpath ..
 [files, dirs] = findallfiles( '..', 'r' );
 dirs = dirs';
 files = files';
-expr = '.hdf$';
+expr = '[^:].*MCD43A4\.[^:]+\.hdf$';
 [t m] = regexpi(files, expr ,'tokens', 'match', 'lineanchors') ;
 isdef = @(x) (~isempty(x));
 log = double(cellfun(isdef,m));
