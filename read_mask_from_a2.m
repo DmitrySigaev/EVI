@@ -1,3 +1,19 @@
+% BRDF-Albedo Quality 16-Day L3 Global 500m
+% The MODerate-resolution Imaging Spectroradiometer (MODIS) BRDF/Albedo Quality 
+% product (MCD43A2) describes the overall condition of the other BRDF and Albedo
+% products. The MCD43A2 product contains 16 days of data at 500-meter spatial
+% resolution provided in a level-3 gridded data set in Sinusoidal projection,
+% and includes albedo quality, snow conditions, ancillary, and inversion
+% information.
+% Both Terra and Aqua data are used to generate this product, providing the
+% highest probability for quality input data and designating it as an MCD,
+% meaning Combined, product.
+% Version-5 MODIS BRDF and Albedo products have attained Validation Stage 3.
+
+% - See more at: https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mcd43a2#sthash.cH9eez5c.dpuf
+
+% MCD43A2 reading
+
 function [AQ0_in, SA0_in, QI1230_in, AAL1_in] = read_mask_from_a2(FILE_NAME)
 
 file_id = hdfgd('open', FILE_NAME, 'rdonly');
