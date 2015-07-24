@@ -9,6 +9,18 @@
 % which are fit to remotely sensed vegetation index (VI) data, to represent
 % intra-annual vegetation dynamics.
 
+% The simplest sigmoid-based method, hereafter called the simple sigmoid,
+% has been widely used in the remote sensing community
+
+% In smoothing_fun_a_b represents the modeled value of a vegetation
+% index such as EVI, at time t . d defines the dormant season
+% baseline value of greenness, c is the amplitude of increase or
+% decrease in greenness, a controls the timing of increase or decrease,
+% and b controls the rate of increase or decrease. smoothing_fun_a_b uses
+% to separately fit to spring and fall data for each site
+% year to account for independent green-up and green-down
+% dynamics, using the Matlab function nlinfit or lsqnonlin.
+
 function y = smoothing_fun_a_b(beta,x, c, d)
 
 a=beta(1);
