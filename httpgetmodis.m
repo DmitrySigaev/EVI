@@ -34,7 +34,7 @@ fclose(fid);
 %% line by line
 fid = fopen('data_url_script_2006-2007.txt');
 
-expr  = 'http://e4ftl01.cr.usgs.gov//MODIS_Composites/MOTA/MCD43A4.005/([0-9]{4}).([0-9]{2}).([0-9]{2})/(MCD43A4.A[0-9]{4}([0-9]{3}).([^:]{6}).[^:]+.hdf$)';
+expr  = 'http://e4ftl01.cr.usgs.gov//MODIS_Composites/MOTA/MCD43A4.005/([0-9]{4}).([0-9]{2}).([0-9]{2})/MCD43A4.A[0-9]{4}([0-9]{3}).([^:]{6}).[^:]+.hdf$';
 
 
 tline = fgetl(fid);
