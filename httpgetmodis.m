@@ -2,13 +2,19 @@ clear all;
 close all;
 
 mfn = mfilename;
-version = 'ver# 2015.08.05';
+version = 'ver# 2015.08.06';
 disp(char(['-> ' mfn ' ' version]));
 
-%str = urlread('http://e4ftl01.cr.usgs.gov//MODIS_Composites/MOTA/MCD43A4.005/');
-%output folder;
+%%
+%Please, change or play with below parameters in you have other
+%type of platform or output destination folder
+
+m = matlabroot;
+slash_chr_sys = filesep;
 slash_chr = '\\';
 path_chr  = 'D:';
+%%
+%output folder;
 output_f = [path_chr slash_chr 'InputData'];
 if isdir(output_f)
 %parse data_url_script_2006-2007.txt 
@@ -57,7 +63,11 @@ for i = 1:length(t_years_days1)
         mkdir(newfr);
     end
     g_str(i).file = [newfr slash_chr g_str(i).shortname];
-    [f, status] = urlwrite(g_str(i).url, g_str(i).file);
+    isfile = exist(g_str(i).file, 'file');
+    if (~isfile)
+      % Download file if it is not exist on destination place(disk)
+      [f, status] = urlwrite(g_str(i).url, g_str(i).file);
+    end
 end
 fclose(fid);
 
