@@ -2,7 +2,7 @@ clear all;
 close all;
 
 mfn = mfilename;
-version = 'ver# 2015.07.20';
+version = 'ver# 2015.08.12';
 disp(char(['-> ' mfn ' ' version]));
 
 
@@ -67,7 +67,7 @@ for xx = 1:downsample_step:size(X, 2);
             j = j+1;
              if( j <= size(yy_i, 2) )
                 [lon_i, lat_i]= pix2map(R1, yy, xx');
-%                [lat_i, lon_i] = invSinProj(xx,yy);
+%                [lat_i, lon_i] = inv_sinproj_tr(xx,yy);
                  lat1(j, i) = lat_i;
                  lon1(j, i) = lon_i;
              end
@@ -104,7 +104,7 @@ for xx = 1:downsample_step:size(X, 2);
             j = j+1;
              if( j <= size(yy_i, 2) )
                 [lon_i, lat_i]= pix2map(R2, yy, xx');
-%                [lat_i, lon_i] = invSinProj(xx,yy);
+%                [lat_i, lon_i] = inv_sinproj_tr(xx,yy);
                  lat2(j, i) = lat_i;
                  lon2(j, i) = lon_i;
              end
@@ -142,7 +142,7 @@ for xx = 1:downsample_step:size(X, 2);
             j = j+1;
              if( j <= size(yy_i, 2) )
                 [lon_i, lat_i]= pix2map(R3, yy, xx');
-%                [lat_i, lon_i] = invSinProj(xx,yy);
+%                [lat_i, lon_i] = inv_sinproj_tr(xx,yy);
                  lat3(j, i) = lat_i;
                  lon3(j, i) = lon_i;
              end
@@ -178,7 +178,7 @@ for xx = 1:downsample_step:size(X, 2);
             j = j+1;
              if( j <= size(yy_i, 2) )
                 [lon_i, lat_i]= pix2map(R4, yy, xx');
-%                [lat_i, lon_i] = invSinProj(xx,yy);
+%                [lat_i, lon_i] = inv_sinproj_tr(xx,yy);
                  lat4(j, i) = lat_i;
                  lon4(j, i) = lon_i;
              end
