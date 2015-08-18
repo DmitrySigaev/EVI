@@ -2,15 +2,15 @@ clear all;
 close all;
 
 mfn = mfilename;
-version = 'ver# 2015.08.14';
+version = 'ver# 2015.08.18';
 disp(char(['-> ' mfn ' ' version]));
 
 addpath ('..', '..\..', '.\out');
-
+load evi_downs_mds_roi_001_doy_1
 ndviCmap = load_ndvi_cmap();
 
 limits = [ 1, 5, 2, 7];
-%m = evi_3_ds_2( 1:5, 2:7);
+m = evi_3_ds_2( 1:5, 2:7);
 
  R = 6371007.18100; %Earth's radius in meters
 
@@ -92,7 +92,7 @@ mstruct = defaultm(mstruct);
 figure
 
 %I = shapeinfo('./allsta/allsta_1000_972012_TC.shp');
-I = shapeinfo('./allsta/allsta_1000_972012_PC.shp');
+I = shapeinfo('../allsta/allsta_1000_972012_PC.shp');
 bb = I.BoundingBox;
 xx = [bb(1), bb(2)];
 yy = [bb(3), bb(4)];
@@ -128,9 +128,9 @@ eviDataLim = [-0.25  1.00];
 config.mds_xs1 = [2400 2400];
 config.mds_xs2 =  [2400 2400];
 config.mds_cells = 2400;
+config.Code_ROIs = [1:3000]';
 
-
-Smap_test = get_data_index_from_roi(config, './allsta/allsta_1000_972012_PC.shp', 'mds');
+Smap_test = get_data_index_from_roi(config, '../allsta/allsta_1000_972012_PC.shp', 'mds');
 tm1 = [Smap_test(:).mds_row];
 tm2 = [Smap_test(:).mds_col];
 disp(tm1);
@@ -171,7 +171,7 @@ for index=1:numel(cities)
 end
 
 %Smap = shaperead('./allsta/allsta_1000_972012_TC.shp');
-Smap = shaperead('./allsta/allsta_1000_972012_PC.shp');
+Smap = shaperead('../allsta/allsta_1000_972012_PC.shp');
 
 sSmap = size(Smap, 1);
 
@@ -285,7 +285,7 @@ for index=1:numel(cities)
 end
 
 %Smap = shaperead('./allsta/allsta_1000_972012_TC.shp');
-Smap = shaperead('./allsta/allsta_1000_972012_PC.shp');
+Smap = shaperead('../allsta/allsta_1000_972012_PC.shp');
 
 sSmap = size(Smap, 1);
 
@@ -322,7 +322,7 @@ previewmap
 figure
 
 %I = shapeinfo('./allsta/allsta_1000_972012_TC.shp');
-I = shapeinfo('./allsta/allsta_1000_972012_PC.shp');
+I = shapeinfo('../allsta/allsta_1000_972012_PC.shp');
 bb = I.BoundingBox;
 xx = [bb(1), bb(2)];
 yy = [bb(3), bb(4)];
@@ -359,7 +359,7 @@ for index=1:numel(cities)
 end
 
 %Smap = shaperead('./allsta/allsta_1000_972012_TC.shp');
-Smap = shaperead('./allsta/allsta_1000_972012_PC.shp');
+Smap = shaperead('../allsta/allsta_1000_972012_PC.shp');
 
 sSmap = size(Smap, 1);
 
@@ -393,7 +393,7 @@ previewmap
 figure
 
 %I = shapeinfo('./allsta/allsta_1000_972012_TC.shp');
-I = shapeinfo('./allsta/allsta_1000_972012_PC.shp');
+I = shapeinfo('../allsta/allsta_1000_972012_PC.shp');
 bb = I.BoundingBox;
 xx = [bb(1), bb(2)];
 yy = [bb(3), bb(4)];
@@ -501,7 +501,7 @@ for index=1:numel(cities)
 end
 
 %Smap = shaperead('./allsta/allsta_1000_972012_TC.shp');
-Smap = shaperead('./allsta/allsta_1000_972012_PC.shp');
+Smap = shaperead('../allsta/allsta_1000_972012_PC.shp');
 
 sSmap = size(Smap, 1);
 
@@ -536,7 +536,7 @@ config.mds_xs2 = [2400 2400];
 config.mds_cells = 2400;
 
 
-Smap___2 = get_data_index_from_roi(config, './allsta/allsta_1000_972012_PC.shp', 'mds');
+Smap___2 = get_data_index_from_roi(config, '../allsta/allsta_1000_972012_PC.shp', 'mds');
 %disp(Smap(1).mds_indexes);
 
 
