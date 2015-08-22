@@ -5,7 +5,7 @@ monitoring through a de-coupling of the canopy background
 signal and a reduction in atmosphere influences.
 
 EVI is computed following this equation:
-EVI = G*(NIR-RED)/(NIR+C1*RED-C2*Blue*L)
+EVI = G\*(NIR-RED)/(NIR+C1\*RED-C2\*Blue\*L)
 
 where NIR/red/blue are atmospherically-corrected or partially
 atmosphere corrected (Rayleigh and ozone absorption) surface
