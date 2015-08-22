@@ -1,3 +1,4 @@
+% draft version
 function [out] = calc_residuals(ps_config)
 if(~exist('ps_config'))
     load 'ps_config.mat';
@@ -92,7 +93,7 @@ out.stats_olr = stats_olr;
 %% http://en.wikipedia.org/wiki/Linear_regression
 
 A = [Xi.^0, Xi];        % create matrix
-                      % x - (m,1)-vector, ó - (m,1)-vector
+                      % x - (m,1)-vector, Ã³ - (m,1)-vector
 w = (A'*A)\(A'*Yi);    % solve the normal equations  4-th method
 
 w = pinv(A'*A)*(A'*Yi);% other way or 5-th method
